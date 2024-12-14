@@ -1,6 +1,6 @@
 {
-  "domain": "dalach_scripts",
-  "name": "dalach.lan scripts",
+  "domain": "price_fetcher",
+  "name": "Price fetcher",
   "version": "0.1.1",
   "codeowners": [
     "@Dalachowsky"
@@ -9,5 +9,7 @@
   "requirements": [
     "beautifulsoup4==4.12.3",
     "aiohttp==3.11.10"
-  ]
+  ],
+  "documentation": "https://github.com/Dalachowsky/HA-price-fetcher",
+  "issue_tracker": "https://github.com/Dalachowsky/HA-price-fetcher"
 }
