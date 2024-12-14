@@ -26,18 +26,15 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 PRICE_FETCHERS: List[PriceFetcher] = []
 
-def setup(hass: HomeAssistant, config: dict) -> bool:
+async def async_setup_platform(hass, config: ConfigType, async_add_entities: AddEntitiesCallback, discovery_info=None):
+    """Set up the sensor platform."""
 
     async def handle_fetchPricesAsync(call):
         for fetcher in PRICE_FETCHERS:
             await fetcher.update_prices_async()
 
-    hass.services.register(DOMAIN, "fetchPrices", handle_fetchPricesAsync)
+    hass.services.async_register(DOMAIN, "fetchPrices", handle_fetchPricesAsync)
 
-    return True
-
-async def async_setup_platform(hass, config: ConfigType, async_add_entities: AddEntitiesCallback, discovery_info=None):
-    """Set up the sensor platform."""
     url = config[CONF_URL]
     name = config[CONF_NAME]
 

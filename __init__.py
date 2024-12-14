@@ -10,7 +10,7 @@ from homeassistant.components.number import NumberEntity
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
-from .sensor import setup, PriceFetcher
+from .sensor import PriceFetcher
 
 import logging
 
@@ -19,6 +19,9 @@ _LOGGER = logging.getLogger(__name__)
 # TODO List the platforms that you want to support.
 # For your initial PR, limit it to 1 platform.
 PLATFORMS: list[Platform] = [Platform.SENSOR]
+
+def setup(hass: HomeAssistant, config: dict) -> bool:
+    return True
 
 # TODO Update entry annotation
 async def async_unload_entry(hass: HomeAssistant, entry: New_NameConfigEntry) -> bool:
