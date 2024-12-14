@@ -1,0 +1,13 @@
+{
+  "domain": "dalach_scripts",
+  "name": "dalach.lan scripts",
+  "version": "0.1.1",
+  "codeowners": [
+    "@Dalachowsky"
+  ],
+  "iot_class": "cloud_polling",
+  "requirements": [
+    "beautifulsoup4==4.12.3",
+    "aiohttp==3.11.10"
+  ]
+}
