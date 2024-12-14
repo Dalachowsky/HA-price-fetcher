@@ -22,6 +22,8 @@ HEADERS = {
 
 class PriceEntity(SensorEntity):
 
+    device_class = SensorDeviceClass.MONETARY
+
     def __init__(self, coordinator, name, volume):
         """Initialize the number entity."""
         self._name = name
